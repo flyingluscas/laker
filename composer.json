@@ -1,18 +1,18 @@
 {
-    "name": ":vendor/:package_name",
+    "name": "flyingluscas/laker",
     "type": "library",
-    "description": ":package_description",
+    "description": "Laravel 5.x packeage to track down bugs.",
     "keywords": [
-        ":vendor",
-        ":package_name"
+        "flyingluscas",
+        "laker"
     ],
-    "homepage": "https://github.com/:vendor/:package_name",
+    "homepage": "https://github.com/flyingluscas/laker",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": ":author_website",
+            "name": "Lucas Pires",
+            "email": "lucas.pires.mattos@gmail.com",
+            "homepage": "https://github.com/flyingluscas",
             "role": "Developer"
         }
     ],
@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            ":vendor\\:package_name\\": "src"
+            "FlyingLuscas\\Laker\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            ":vendor\\:package_name\\": "tests"
+            "FlyingLuscas\\Laker\\Tests\\": "tests"
         }
     },
     "scripts": {
