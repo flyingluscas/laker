@@ -2,8 +2,10 @@
 
 namespace FlyingLuscas\Laker\Tests;
 
+use Mockery;
 use Exception;
 use FlyingLuscas\Laker\Issue;
+use FlyingLuscas\Laker\Services\Bitbucket;
 
 class IssueTest extends TestCase
 {
@@ -22,5 +24,25 @@ class IssueTest extends TestCase
         $issue = new Issue(new Exception($this->body));
 
         $this->assertEquals($this->body, $issue->getBody(), "The body of the issue is not equals to the exception's message.");
+    }
+
+    /**
+     * @dataProvider dataServicesProvider
+     */
+    public function testCreateIssue($service)
+    {
+        $issue = new Issue(new Exception($this->body));
+
+        $service = Mockery::mock($service);
+        $service->shouldReceive('createIssue')->with($issue)->andReturn(true)->mock();
+
+        $this->assertTrue($issue->createOn($service));
+    }
+
+    public function dataServicesProvider()
+    {
+        return [
+            [Bitbucket::class],
+        ];
     }
 }

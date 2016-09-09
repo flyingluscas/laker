@@ -4,6 +4,7 @@ namespace FlyingLuscas\Laker;
 
 use Exception;
 use ReflectionClass;
+use FlyingLuscas\Laker\Contracts\ServiceContract;
 
 class Issue
 {
@@ -30,6 +31,18 @@ class Issue
     {
         $this->setTitle($this->getIssueTitleFromException($e));
         $this->setBody($e->getMessage());
+    }
+
+    /**
+     * Create issue on the given service.
+     *
+     * @param  \FlyingLuscas\Laker\Contracts\ServiceContract $service
+     *
+     * @return bool
+     */
+    public function createOn(ServiceContract $service)
+    {
+        return $service->createIssue($this);
     }
 
     /**
