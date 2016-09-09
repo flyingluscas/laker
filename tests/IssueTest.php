@@ -4,6 +4,7 @@ namespace FlyingLuscas\Laker\Tests;
 
 use Mockery;
 use Exception;
+use Buzz\Message\Response;
 use FlyingLuscas\Laker\Issue;
 use FlyingLuscas\Laker\Services\Bitbucket;
 
@@ -34,9 +35,12 @@ class IssueTest extends TestCase
         $issue = new Issue(new Exception($this->body));
 
         $service = Mockery::mock($service);
-        $service->shouldReceive('createIssue')->with($issue)->andReturn(true)->mock();
+        $service->shouldReceive('createIssue')
+                ->with($issue)
+                ->andReturn(Response::class)
+                ->mock();
 
-        $this->assertTrue($issue->createOn($service));
+        $this->assertNull($issue->createOn($service));
     }
 
     public function dataServicesProvider()

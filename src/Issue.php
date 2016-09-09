@@ -38,11 +38,11 @@ class Issue
      *
      * @param  \FlyingLuscas\Laker\Contracts\ServiceContract $service
      *
-     * @return bool
+     * @return void
      */
     public function createOn(ServiceContract $service)
     {
-        return $service->createIssue($this);
+        $service->createIssue($this);
     }
 
     /**

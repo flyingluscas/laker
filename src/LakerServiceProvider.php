@@ -2,6 +2,8 @@
 
 namespace FlyingLuscas\Laker;
 
+use Bitbucket\API\Repositories\Issues;
+use Bitbucket\API\Authentication\Basic;
 use Illuminate\Support\ServiceProvider;
 
 class LakerServiceProvider extends ServiceProvider
@@ -27,6 +29,27 @@ class LakerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->setUpBitbucketIssueTracker();
+    }
+
+    /**
+     * Set up the Bitbucket issue tracker service.
+     *
+     * @return void
+     */
+    private function setUpBitbucketIssueTracker()
+    {
+        $this->app->singleton('BitbucketIssuesTracker', function () {
+            $issues = new Issues;
+
+            $username = config('laker.auth.username');
+            $password = config('laker.auth.password');
+
+            $basicAuth = new Basic($username, $password);
+
+            $issues->setCredentials($basicAuth);
+
+            return $issues;
+        });
     }
 }
