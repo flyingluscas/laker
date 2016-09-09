@@ -1,10 +1,13 @@
 {
     "name": "flyingluscas/laker",
     "type": "library",
-    "description": "Laravel 5.x packeage to track down bugs.",
+    "description": "Laravel 5.x package to track down bugs.",
     "keywords": [
         "flyingluscas",
-        "laker"
+        "laker",
+        "bugs",
+        "issue",
+        "bitbucket"
     ],
     "homepage": "https://github.com/flyingluscas/laker",
     "license": "MIT",
