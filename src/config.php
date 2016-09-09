@@ -2,7 +2,9 @@
 
 return [
     'bitbucket' => [
-        'username' => 'donkey@donkeys.com',
-        'password' => 'donkeypassword',
+        'basic' => [
+            'username' => 'donkey@donkeys.com',
+            'password' => 'donkeypassword',
+        ],
     ],
 ];
