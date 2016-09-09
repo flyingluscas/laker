@@ -13,7 +13,11 @@ class LakerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->mergeConfigFrom(__DIR__.'/config.php', 'laker');
+
+        $this->publishes([
+            __DIR__.'/config.php' => config_path('laker.php'),
+        ]);
     }
 
     /**

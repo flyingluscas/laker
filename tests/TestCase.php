@@ -5,7 +5,7 @@ namespace FlyingLuscas\Laker\Tests;
 use FlyingLuscas\Laker\LakerServiceProvider;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
-abstract class Testcase extends OrchestraTestCase
+abstract class TestCase extends OrchestraTestCase
 {
     /**
      * {@inheritdoc}
