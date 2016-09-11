@@ -4,19 +4,13 @@ All Notable changes to `laker` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
-## NEXT - YYYY-MM-DD
+## Unreleased
 
 ### Added
-- Nothing
+- Issues for Github
+- Trello
 
-### Deprecated
-- Nothing
+## v0.1.0 - 2016-09-10
 
-### Fixed
-- Nothing
-
-### Removed
-- Nothing
-
-### Security
-- Nothing
+### Added
+- Issues for Bitbucket
