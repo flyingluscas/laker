@@ -20,7 +20,55 @@ $ composer require flyingluscas/laker
 
 ## Usage
 
-Coming soon...
+### 1. Service Provider
+First thing you need to do is to add the `LakerServiceProvider` under the `providers` section on `config/app.php`
+
+``` php
+'providers' => [
+
+    // ...
+
+    FlyingLuscas\Laker\LakerServiceProvider::class,
+
+],
+```
+
+### 2. Configuration
+
+Ok, now that our service provider is in place, wee need to set up our configurarion file, run.
+
+``` bash
+$ php artisan vendor:publish --provider="FlyingLuscas\Laker\LakerServiceProvider"
+```
+
+The command above will generate the  `config/laker.php` file.
+
+| Option           | Description                                         |
+|:-----------------|:----------------------------------------------------|
+| account_slug     | The slug of your account or team on Bitbucket.      |
+| repository_slug  | The slug of your repository on Bitbucket.           |
+| auth             | Your **username** and **password** from Bitbucket.  |
+
+### 3. Sending Issues
+
+All Laravel exceptions can be intercepted through the `app/Exceptions/Handler.php` file.
+
+On this file, go to the `report` method and add this on the top.
+
+``` php
+use FlyingLuscas\Laker\Issue;
+use FlyingLuscas\Laker\Services\Bitbucket;
+
+public function report(Exception $exception)
+{
+    $issue = new Issue($exception);
+    $bitbucket = new Bitbucket;
+
+    $issue->createOn($bitbucket);
+
+    parent::report($exception);
+}
+```
 
 ## Change log
 
