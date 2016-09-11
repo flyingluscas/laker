@@ -35,7 +35,7 @@ First thing you need to do is to add the `LakerServiceProvider` under the `provi
 
 ### 2. Configuration
 
-Ok, now that our service provider is in place, wee need to set up our configurarion file, run.
+Ok, now that our service provider is in place, we need to set up our configurarion file, run.
 
 ``` bash
 $ php artisan vendor:publish --provider="FlyingLuscas\Laker\LakerServiceProvider"
