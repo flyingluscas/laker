@@ -7,8 +7,9 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-Laker was build to help you track down bugs on your laravel applications more easily.
-He catches all exceptions throw by your application and saves on Bitbucket as issues.
+Laker is a **Laravel 5.2/5.3** package to help you track down bugs.
+
+Laker catches all **exceptions** fired by Laravel and saves them on **Bitbucket** as **issues**.
 
 ## Install
 
