@@ -1,7 +1,7 @@
 {
     "name": "flyingluscas/laker",
     "type": "library",
-    "description": "Laravel 5.x package to track down bugs.",
+    "description": "Laravel package to track down bugs.",
     "keywords": [
         "flyingluscas",
         "laker",
