@@ -8,7 +8,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ### Added
 - Issues for Github
-- Trello
+- Trello Checklist
 
 ## v0.1.0 - 2016-09-10
 
