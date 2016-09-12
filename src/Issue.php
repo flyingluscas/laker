@@ -30,7 +30,7 @@ class Issue
     public function __construct(Exception $e)
     {
         $this->setTitle($this->getIssueTitleFromException($e));
-        $this->setBody($e->getMessage());
+        $this->setBody($this->getIssueBodyFromException($e));
     }
 
     /**
@@ -43,6 +43,18 @@ class Issue
     public function createOn(ServiceContract $service)
     {
         $service->createIssue($this);
+    }
+
+    /**
+     * Get the body of the issue from an exception.
+     *
+     * @param Exception $e
+     *
+     * @return string
+     */
+    private function getIssueBodyFromException(Exception $e)
+    {
+        return sprintf("%s in %s line %d\n\n%s", get_class($e), $e->getFile(), $e->getLine(), $e->getMessage());
     }
 
     /**
