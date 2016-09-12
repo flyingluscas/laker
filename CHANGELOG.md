@@ -10,6 +10,11 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Issues for Github
 - Trello Checklist
 
+## v0.4.0 - 2016-09-12
+
+### Added
+- More detailed body issues
+
 ## v0.3.0 - 2016-09-12
 
 ### Added
