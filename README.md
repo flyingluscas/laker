@@ -7,6 +7,8 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
+**ATTENTION:** This package is no longer maintained, please see the new [BugNotifier](https://github.com/flyingluscas/Laravel-BugNotifier) package.
+
 Laker is a **Laravel 5.2/5.3** package to help you track down bugs.
 
 Laker catches all **exceptions** fired by Laravel and saves them on **Bitbucket** as **issues**.
